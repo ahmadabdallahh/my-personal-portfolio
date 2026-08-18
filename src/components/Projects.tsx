@@ -15,7 +15,12 @@ export default function Projects({ projects }: { projects: Project[] }) {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((p, i) => {
-          const imgUrl = p.cover ? urlFor(p.cover).url() : "";
+          const isLocalCover = p.cover?.startsWith("/");
+          const imgUrl = p.cover
+            ? isLocalCover
+              ? p.cover
+              : urlFor(p.cover).url()
+            : "";
           return (
             <motion.article
               key={p._id}
@@ -27,7 +32,13 @@ export default function Projects({ projects }: { projects: Project[] }) {
             >
               <div className="relative aspect-[16/10] bg-gradient-to-br from-surface-muted to-surface">
                 {imgUrl ? (
-                  <Image src={imgUrl} alt={p.title} fill className="object-cover" />
+                  <Image
+                    src={imgUrl}
+                    alt={p.title}
+                    fill
+                    className="object-cover"
+                    unoptimized={isLocalCover}
+                  />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg">
                     {p.title}
