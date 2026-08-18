@@ -43,58 +43,40 @@ export const placeholderSkillCategories: SkillCategory[] = [
 export const placeholderExperience: Experience[] = [
   {
     _id: "exp-1",
-    company: "CROCOIT",
-    employmentType: "Full-time",
-    startDate: "2025-04",
+    company: "GDG Damanhour",
+    employmentType: "Volunteer",
+    startDate: "2026-02",
     isCurrent: true,
-    location: "Cairo",
     roles: [
       {
-        title: "Frontend Developer",
-        startDate: "2025-04",
+        title: "Front End Developer",
+        startDate: "2026-02",
         bullets: [
-          "Built responsive medical booking platform with modern UI and interactive elements",
-          "Implemented patient registration, login, and profile management with secure authentication",
-          "Developed hospital, clinic, and doctor management interfaces with dynamic scheduling",
-          "Optimized performance and Core Web Vitals for production applications",
+          "Collaborated with a cross-functional team of Frontend, Backend, and Mobile developers to build a professional community website",
+          "Contributed to the development and implementation of key features to enhance user experience and platform functionality",
+          "Participated in team planning, technical discussions, and problem-solving throughout the development lifecycle",
+          "Worked in a collaborative development environment to deliver a high-quality, scalable web solution",
         ],
       },
     ],
   },
   {
     _id: "exp-2",
-    company: "CROCOIT",
-    employmentType: "Trainee",
-    startDate: "2024-11",
-    endDate: "2025-03",
-    location: "Cairo",
-    roles: [
-      {
-        title: "Frontend Developer Trainee",
-        startDate: "2024-11",
-        endDate: "2025-03",
-        bullets: [
-          "Completed practical training focused on modern Magento 2 frontend development",
-          "Worked with Page Builder, widgets, layout XML, PHTML templates, and static assets",
-          "Gained experience with RequireJS, Git workflows, and converting Figma designs to UI",
-        ],
-      },
-    ],
-  },
-  {
-    _id: "exp-3",
-    company: "ITI",
+    company: "Here Code Initiative",
     employmentType: "Training",
-    startDate: "2023-09",
-    endDate: "2023-09",
+    startDate: "2025-06",
+    endDate: "2025-09",
     roles: [
       {
-        title: "React.js Summer Training",
-        startDate: "2023-09",
-        endDate: "2023-09",
+        title: "Front-End Developer",
+        startDate: "2025-06",
+        endDate: "2025-09",
         bullets: [
-          "Built responsive web applications using React.js, Bootstrap, and ES6 JavaScript",
-          "Focused on clean, modular code architecture",
+          "Implemented modern UI, animations, and interactive elements",
+          "Designed mobile-first layouts supporting 3+ screen sizes",
+          "Collaborated with a team of 4 developers to deliver project features on time",
+          "Optimized performance, reducing load time by approximately 25%",
+          "Practiced effective communication and version control within the team",
         ],
       },
     ],
@@ -159,33 +141,11 @@ export const placeholderProjects: Project[] = [
 ];
 
 export const placeholderEducation: Education = {
-  institution: "Faculty of Engineering, Zagazig University",
-  degree: "Bachelor of Science in Computer Science",
-  gpaLabel: "Grade",
-  gpaValue: "Very Good",
-  startYear: "2019",
-  endYear: "2024",
-  coursework: [
-    "Data Structures and Algorithms",
-    "Object-Oriented Programming",
-    "Database Management Systems",
-    "Web Development",
-    "Software Engineering",
-    "Computer Networks",
-  ],
-  graduationProject: {
-    title: "Website Builder Platform",
-    status: "Excellent",
-    description: "Developed a comprehensive website builder platform that enables users to create and customize websites with ease.",
-    highlights: [
-      "Built with modern web development practices",
-      "Implemented multilingual support (AR/EN)",
-      "Advanced user interface design principles",
-      "Drag-and-drop functionality",
-      "Template management system",
-    ],
-    note: "This project demonstrated proficiency in full-stack development, UI/UX design, and multilingual application architecture.",
-  },
+  institution: "WE School for Applied Technology – El Beheira",
+  degree: "Diploma in Applied Technology",
+  startYear: "2023",
+  endYear: "2026",
+  coursework: [],
 };
 
 export const placeholderArticles: Article[] = [
