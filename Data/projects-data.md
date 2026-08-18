@@ -173,13 +173,6 @@
 - **Features:** Authentication, i18n (AR/EN), autosave, admin panel
 - **GitHub:** https://github.com/ahmadabdallahh/tansiq-simulator
 
-### GDG Damanhour Website
-
-- **Description:** Official website repository for GDG Damanhour – A local chapter of Google Developer Groups empowering developers through events, workshops, and community initiatives.
-- **Tech Stack:** TypeScript, React
-- **Features:** Community platform, events management
-- **GitHub:** https://github.com/ahmadabdallahh/client-side-web
-
 ### Quiz App (React)
 
 - **Description:** A modern interactive React Quiz App built with React 19, TypeScript, Vite, and Tailwind CSS v4. Features a per-question timer, instant correct/wrong answer highlighting, and a detailed results screen.
