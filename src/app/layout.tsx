@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { getProfile, getSiteSettings } from "@/lib/data";
+import { getProfile } from "@/lib/data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,13 +11,11 @@ const inter = Inter({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const [profile, settings] = await Promise.all([getProfile(), getSiteSettings()]);
+export function generateMetadata(): Metadata {
+  const profile = getProfile();
 
-  const title = settings?.siteTitle || `${profile.name} — ${profile.title}`;
-  const description =
-    settings?.siteDescription ||
-    profile.bio.slice(0, 155);
+  const title = `${profile.name} — ${profile.title}`;
+  const description = profile.bio.slice(0, 155);
 
   return {
     metadataBase: new URL(siteUrl),

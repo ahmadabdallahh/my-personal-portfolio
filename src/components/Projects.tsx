@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { ExternalLink, LayoutGrid } from "lucide-react";
 import { Github } from "./Github";
 import SectionHeading from "./SectionHeading";
-import { urlFor } from "@/sanity/image";
 import type { Project } from "@/lib/types";
 
 export default function Projects({ projects }: { projects: Project[] }) {
@@ -14,14 +13,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
       <SectionHeading icon={LayoutGrid} title="Projects" />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {projects.map((p, i) => {
-          const isLocalCover = p.cover?.startsWith("/");
-          const imgUrl = p.cover
-            ? isLocalCover
-              ? p.cover
-              : urlFor(p.cover).url()
-            : "";
-          return (
+        {projects.map((p, i) => (
             <motion.article
               key={p._id}
               initial={{ opacity: 0, y: 14 }}
@@ -31,13 +23,13 @@ export default function Projects({ projects }: { projects: Project[] }) {
               className="rounded-2xl border border-surface-border overflow-hidden flex flex-col"
             >
               <div className="relative aspect-[16/10] bg-gradient-to-br from-surface-muted to-surface">
-                {imgUrl ? (
+                {p.cover ? (
                   <Image
-                    src={imgUrl}
+                    src={p.cover}
                     alt={p.title}
                     fill
                     className="object-cover"
-                    unoptimized={isLocalCover}
+                    unoptimized
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg">
@@ -89,8 +81,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                 </div>
               </div>
             </motion.article>
-          );
-        })}
+        ))}
       </div>
     </section>
   );

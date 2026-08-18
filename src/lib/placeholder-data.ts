@@ -8,8 +8,7 @@ import type {
 } from "./types";
 
 /**
- * Real content from CV + Figma design.
- * Replace by editing content in Sanity Studio once configured.
+ * Portfolio content — edit here to update site data.
  */
 
 export const placeholderProfile: Profile = {
@@ -23,7 +22,7 @@ export const placeholderProfile: Profile = {
         { platform: "linkedin", url: "https://linkedin.com/in/ahmad-abdallah-h" },
         { platform: "github", url: "https://github.com/ahmadabdallahh" },
         { platform: "whatsapp", url: "https://wa.me/20100642925" },
-        { platform: "cv", url: "#" },
+        { platform: "cv", url: "https://drive.google.com/file/d/1loJoDfyn4ZsavnO0Ni-CkfjDuqURLXtV/view?usp=drive_link" },
     ],
 };
 
