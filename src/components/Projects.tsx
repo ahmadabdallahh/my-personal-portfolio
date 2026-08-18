@@ -23,20 +23,20 @@ export default function Projects({ projects }: { projects: Project[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.06 }}
-              className="rounded-2xl border border-surface-border bg-surface-card overflow-hidden flex flex-col"
+              className="rounded-2xl border border-surface-border overflow-hidden flex flex-col"
             >
-              <div className="relative aspect-[16/10] bg-gradient-to-br from-accent-light to-surface-muted">
+              <div className="relative aspect-[16/10] bg-gradient-to-br from-surface-muted to-surface">
                 {imgUrl ? (
                   <Image src={imgUrl} alt={p.title} fill className="object-cover" />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-accent-dark/40 font-display font-bold text-lg">
+                  <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg">
                     {p.title}
                   </div>
                 )}
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-display font-bold text-ink">{p.title}</h3>
+                <h3 className="font-bold text-lg text-ink">{p.title}</h3>
                 <p className="mt-1.5 text-sm text-ink-soft leading-relaxed flex-1">
                   {p.summary}
                 </p>
@@ -45,7 +45,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                   {p.tags?.map((t) => (
                     <span
                       key={t}
-                      className="text-[11px] font-medium text-ink-soft bg-surface-muted rounded-md px-2 py-0.5"
+                      className="text-[11px] font-semibold text-ink-soft border border-surface-border rounded-md px-2 py-0.5"
                     >
                       {t}
                     </span>
@@ -58,9 +58,9 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       href={p.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-ink-soft hover:text-ink"
+                      className="inline-flex items-center gap-1.5 text-sm text-ink-faint hover:text-accent transition-colors"
                     >
-                      <Github size={14} />
+                      <Github size={16} />
                       Code
                     </a>
                   )}
@@ -69,10 +69,10 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       href={p.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-dark ml-auto"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent ml-auto hover:text-accent-dark transition-colors"
                     >
                       View details
-                      <ExternalLink size={13} />
+                      <ExternalLink size={14} />
                     </a>
                   )}
                 </div>

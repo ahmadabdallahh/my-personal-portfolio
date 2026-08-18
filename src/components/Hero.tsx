@@ -26,17 +26,17 @@ export default function Hero({ profile }: { profile: Profile }) {
         className="max-w-2xl"
       >
         {profile.status && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-light text-accent-dark text-xs font-medium px-3 py-1 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-dark" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-600 text-xs font-medium px-3 py-1 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             {profile.status}
           </span>
         )}
 
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-ink leading-[1.1]">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ink leading-[1.1]">
           {profile.name}
         </h1>
 
-        <p className="mt-2 text-lg md:text-xl font-display font-semibold text-accent">
+        <p className="mt-2 text-2xl md:text-3xl font-medium text-ink-soft">
           {profile.title}
         </p>
 
@@ -47,12 +47,12 @@ export default function Hero({ profile }: { profile: Profile }) {
           </p>
         )}
 
-        <p className="mt-6 text-ink-soft leading-relaxed">{profile.bio}</p>
+        <p className="mt-6 text-lg text-ink-soft leading-relaxed">{profile.bio}</p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-dark text-white text-sm font-medium px-5 py-2.5 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-6 py-3 transition-colors"
           >
             View Projects
             <ArrowRight size={16} />
@@ -62,7 +62,7 @@ export default function Hero({ profile }: { profile: Profile }) {
               href={cv.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-surface-border hover:border-ink text-ink text-sm font-medium px-5 py-2.5 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-surface-border hover:border-ink text-ink text-sm font-semibold px-6 py-3 transition-colors"
             >
               Preview CV
               <FileText size={16} />
@@ -82,9 +82,9 @@ export default function Hero({ profile }: { profile: Profile }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.platform}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-surface-border text-ink-soft hover:text-accent hover:border-accent transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-surface-border text-ink-faint hover:text-accent hover:border-accent transition-colors"
                 >
-                  <Icon size={16} />
+                  <Icon size={18} />
                 </a>
               );
             })}

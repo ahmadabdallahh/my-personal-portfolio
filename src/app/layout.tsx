@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { getProfile, getSiteSettings } from "@/lib/data";
 
-const display = Manrope({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "700", "800"],
-});
-
-const body = Inter({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
@@ -66,7 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );

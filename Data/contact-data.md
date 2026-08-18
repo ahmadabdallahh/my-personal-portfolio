@@ -3,6 +3,7 @@
 ## Contact Information
 
 ### Email
+
 - **Label:** Email
 - **Value:** abdelrahman.ragab.abdelbaky@gmail.com
 - **CTA:** Drop me a line
@@ -10,6 +11,7 @@
 - **Link:** mailto:abdelrahman.ragab.abdelbaky@gmail.com
 
 ### LinkedIn
+
 - **Label:** LinkedIn
 - **Value:** abdelrahman-ragab
 - **CTA:** Let's connect
@@ -17,6 +19,7 @@
 - **Link:** https://linkedin.com/in/abdelrahman-ragab
 
 ### GitHub
+
 - **Label:** GitHub
 - **Value:** Abdelrahman5243
 - **CTA:** See my work
@@ -24,6 +27,7 @@
 - **Link:** https://github.com/Abdelrahman5243
 
 ### WhatsApp
+
 - **Label:** WhatsApp
 - **Value:** +20 102 168 7760
 - **CTA:** Chat directly
@@ -48,8 +52,8 @@ From the hero section, these social links are displayed as icons:
 
 - **Name:** Ahmad Abdallah
 - **Title:** Front-End Developer | React.js • Next.js
-- **Email:** ahmad.ab.hossen@gmail.com
-- **Phone:** 0100642925
+- **Email:** ahmadabhossen@gmail.com
+- **Phone:** 01006429525
 - **Links:** Portfolio | GitHub | LinkedIn
 
 ---
@@ -67,6 +71,7 @@ From the hero section, these social links are displayed as icons:
 ```
 
 ### Card Specs
+
 - **Width:** 558.5px
 - **Height:** 82.75px
 - **Border Radius:** 17px
@@ -92,6 +97,7 @@ From the hero section, these social links are displayed as icons:
 ```
 
 ### Section Specs
+
 - **Icon Size:** 22.26px × 22.26px
 - **Icon Color:** #b45309
 - **Title Font:** Inter 700 51px

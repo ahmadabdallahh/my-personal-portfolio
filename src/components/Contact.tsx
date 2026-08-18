@@ -30,23 +30,23 @@ function CopyRow({ platform, value, href }: { platform: string; value: string; h
   };
 
   return (
-    <div className="flex items-center justify-between gap-4 py-3.5 border-b border-surface-border last:border-b-0">
-      <div className="flex items-center gap-3 min-w-0">
-        <span className="w-9 h-9 shrink-0 rounded-full bg-surface-muted flex items-center justify-center text-ink-soft">
-          <Icon size={16} />
+    <div className="flex items-center justify-between gap-4 py-4 border-b border-surface-border last:border-b-0">
+      <div className="flex items-center gap-4 min-w-0">
+        <span className="w-10 h-10 shrink-0 rounded-full border border-surface-border flex items-center justify-center text-accent">
+          <Icon size={18} />
         </span>
         <div className="min-w-0">
-          <p className="text-xs text-ink-faint capitalize">{platform}</p>
-          <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-ink truncate block hover:text-accent-dark">
+          <p className="text-[11px] font-semibold text-ink uppercase tracking-wide">{platform}</p>
+          <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-ink-soft truncate block hover:text-accent transition-colors">
             {value}
           </a>
         </div>
       </div>
       <button
         onClick={copy}
-        className="shrink-0 text-xs font-medium text-ink-soft hover:text-accent-dark inline-flex items-center gap-1"
+        className="shrink-0 text-xs font-medium text-ink-faint hover:text-accent inline-flex items-center gap-1 transition-colors"
       >
-        {copied ? <Check size={14} /> : <Copy size={14} />}
+        {copied ? <Check size={14} className="text-success" /> : <Copy size={14} />}
         {copied ? "Copied" : "Copy"}
       </button>
     </div>

@@ -25,17 +25,17 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors ${
-        scrolled ? "bg-surface/90 backdrop-blur border-b border-surface-border" : "bg-transparent"
+      className={`sticky top-0 z-50 transition-all ${
+        scrolled ? "bg-surface/90 backdrop-blur-md border-b border-surface-border shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="section-container flex items-center justify-between h-16">
-        <nav className="hidden md:flex items-center gap-8">
+      <div className="section-container flex items-center justify-between h-20">
+        <nav className="hidden md:flex items-center gap-2">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-ink-soft hover:text-ink transition-colors"
+              className="text-sm font-medium text-ink-soft hover:text-ink px-4 py-2 rounded-full border border-transparent hover:border-surface-border transition-all"
             >
               {item.label}
             </a>
@@ -47,12 +47,12 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
 
         <a
           href="#about"
-          className="font-display font-extrabold tracking-tight text-ink text-sm"
+          className="font-bold tracking-tight text-ink text-sm"
         >
           Portfolio
         </a>
@@ -65,7 +65,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="text-sm text-ink-soft"
+              className="text-sm font-medium text-ink-soft py-2"
             >
               {item.label}
             </a>
