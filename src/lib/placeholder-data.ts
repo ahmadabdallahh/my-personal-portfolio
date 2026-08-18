@@ -19,9 +19,9 @@ export const placeholderProfile: Profile = {
     bio: "Motivated Front-End Developer with strong fundamentals in HTML, CSS, JavaScript, React.js, and hands-on experience building real-world projects. Passionate about creating responsive, user-friendly, and accessible web interfaces.",
     socials: [
         { platform: "email", url: "mailto:ahmadabhossen@gmail.com" },
-        { platform: "linkedin", url: "https://linkedin.com/in/ahmad-abdallah-h" },
+        { platform: "linkedin", url: "https://www.linkedin.com/in/ahmad-abdalllah/" },
         { platform: "github", url: "https://github.com/ahmadabdallahh" },
-        { platform: "whatsapp", url: "https://wa.me/20100642925" },
+        { platform: "whatsapp", url: "https://wa.me/201006429525" },
         { platform: "cv", url: "https://drive.google.com/file/d/1loJoDfyn4ZsavnO0Ni-CkfjDuqURLXtV/view?usp=drive_link" },
     ],
 };
