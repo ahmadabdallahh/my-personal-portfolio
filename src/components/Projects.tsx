@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, LayoutGrid } from "lucide-react";
+import { ExternalLink, LayoutGrid } from "lucide-react";
+import { Github } from "./Github";
 import SectionHeading from "./SectionHeading";
 import { urlFor } from "@/sanity/image";
 import type { Project } from "@/lib/types";
