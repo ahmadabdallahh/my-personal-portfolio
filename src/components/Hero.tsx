@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, FileText, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Github } from "./Github";
+import { Linkedin } from "./Linkedin";
 import type { Profile } from "@/lib/types";
 
 const ICONS: Record<string, React.ElementType> = {

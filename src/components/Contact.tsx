@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
+import { Check, Copy, Mail, MessageCircle, Phone } from "lucide-react";
 import { Github } from "./Github";
+import { Linkedin } from "./Linkedin";
 import SectionHeading from "./SectionHeading";
 import type { Profile } from "@/lib/types";
 
