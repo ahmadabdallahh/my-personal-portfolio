@@ -1,0 +1,85 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, LayoutGrid } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import { urlFor } from "@/sanity/image";
+import type { Project } from "@/lib/types";
+
+export default function Projects({ projects }: { projects: Project[] }) {
+  return (
+    <section id="projects" className="section-container py-16 md:py-24">
+      <SectionHeading icon={LayoutGrid} title="Projects" />
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {projects.map((p, i) => {
+          const imgUrl = p.cover ? urlFor(p.cover).url() : "";
+          return (
+            <motion.article
+              key={p._id}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: (i % 6) * 0.06 }}
+              className="rounded-2xl border border-surface-border bg-surface-card overflow-hidden flex flex-col"
+            >
+              <div className="relative aspect-[16/10] bg-gradient-to-br from-accent-light to-surface-muted">
+                {imgUrl ? (
+                  <Image src={imgUrl} alt={p.title} fill className="object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-accent-dark/40 font-display font-bold text-lg">
+                    {p.title}
+                  </div>
+                )}
+              </div>
+
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-display font-bold text-ink">{p.title}</h3>
+                <p className="mt-1.5 text-sm text-ink-soft leading-relaxed flex-1">
+                  {p.summary}
+                </p>
+
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {p.tags?.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[11px] font-medium text-ink-soft bg-surface-muted rounded-md px-2 py-0.5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-4 flex items-center gap-4 pt-3 border-t border-surface-border">
+                  {p.githubUrl && (
+                    <a
+                      href={p.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-ink-soft hover:text-ink"
+                    >
+                      <Github size={14} />
+                      Code
+                    </a>
+                  )}
+                  {p.liveUrl && (
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-dark ml-auto"
+                    >
+                      View details
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
