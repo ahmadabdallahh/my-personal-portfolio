@@ -39,6 +39,45 @@ export const placeholderSkillCategories: SkillCategory[] = [
 
 export const placeholderExperience: Experience[] = [
     {
+        _id: "exp-3",
+        company: "BATU ICPC Community",
+        employmentType: "Season 2027",
+        startDate: "2026-11",
+        isCurrent: true,
+        roles: [
+            {
+                title: "Software Development & Cybersecurity Committee Member",
+                startDate: "2026-11",
+                bullets: [
+                    "Joined the Software Development & Cybersecurity Committee to contribute to the community's technical initiatives and digital infrastructure",
+                    "Collaborate with fellow developers to explore, develop, and maintain web-based solutions for the community",
+                    "Participate in technical discussions, problem-solving, and collaborative development activities",
+                    "Contribute to building a secure, reliable, and user-friendly digital environment while strengthening software engineering practices",
+                ],
+            },
+        ],
+    },
+    {
+        _id: "exp-4",
+        company: "GRV Team",
+        employmentType: "Volunteer",
+        startDate: "2026-10",
+        isCurrent: true,
+        roles: [
+            {
+                title: "Front-End Developer",
+                startDate: "2026-10",
+                bullets: [
+                    "Collaborated with a multidisciplinary team to contribute to web development initiatives and digital projects",
+                    "Contributed to planning and shaping the GRV Team platform, focusing on its user interface, design system, and overall user experience",
+                    "Worked on defining consistent UI components, color schemes, typography, and responsive design guidelines",
+                    "Participated in technical discussions, project planning, and collaborative problem-solving to improve the team's digital products",
+                    "Worked alongside team members to transform ideas into practical solutions while maintaining clean, consistent, and maintainable interfaces",
+                ],
+            },
+        ],
+    },
+    {
         _id: "exp-1",
         company: "GDG Damanhour",
         employmentType: "Volunteer",
@@ -61,13 +100,13 @@ export const placeholderExperience: Experience[] = [
         _id: "exp-2",
         company: "Here Code Initiative",
         employmentType: "Training",
-        startDate: "2025-06",
-        endDate: "2025-09",
+        startDate: "2025-09",
+        endDate: "2026-11",
         roles: [
             {
                 title: "Front-End Developer",
-                startDate: "2025-06",
-                endDate: "2025-09",
+                startDate: "2025-09",
+                endDate: "2026-11",
                 bullets: [
                     "Implemented modern UI, animations, and interactive elements",
                     "Designed mobile-first layouts supporting 3+ screen sizes",
@@ -164,13 +203,22 @@ export const placeholderProjects: Project[] = [
     },
 ];
 
-export const placeholderEducation: Education = {
-    institution: "WE School for Applied Technology – El Beheira",
-    degree: "Diploma in Applied Technology",
-    startYear: "2023",
-    endYear: "2026",
-    coursework: [],
-};
+export const placeholderEducation: Education[] = [
+    {
+        institution: "Borg El-Arab Technological University (BATU)",
+        degree: "Bachelor's Degree in Information Technology (IT)",
+        startYear: "Sep 2026",
+        endYear: "Sep 2030 (Expected)",
+        coursework: [],
+    },
+    {
+        institution: "WE School for Applied Technology – El Beheira",
+        degree: "Diploma in Applied Technology",
+        startYear: "2023",
+        endYear: "2026",
+        coursework: [],
+    },
+];
 
 export const placeholderArticles: Article[] = [
     {

@@ -32,7 +32,7 @@ export function getProjects(): Project[] {
     return placeholderProjects;
 }
 
-export function getEducation(): Education {
+export function getEducation(): Education[] {
     return placeholderEducation;
 }
 
