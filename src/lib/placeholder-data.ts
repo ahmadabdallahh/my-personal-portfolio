@@ -14,9 +14,13 @@ import type {
 export const placeholderProfile: Profile = {
     name: "Ahmad Abdallah",
     title: "Front-End Developer",
+    titleAr: "مطوّر واجهات أمامية",
     location: "Cairo, Egypt",
+    locationAr: "القاهرة، مصر",
     status: "Open to Work",
+    statusAr: "متاح للعمل",
     bio: "Motivated Front-End Developer with strong fundamentals in HTML, CSS, JavaScript, React.js, and hands-on experience building real-world projects. Passionate about creating responsive, user-friendly, and accessible web interfaces.",
+    bioAr: "مطوّر واجهات أمامية طموح يمتلك أساسًا قويًا في HTML وCSS وJavaScript وReact.js، مع خبرة عملية في بناء مشاريع حقيقية. شغوف ببناء واجهات ويب متجاوبة وسهلة الاستخدام ومهيّأة لإمكانية الوصول.",
     socials: [
         { platform: "email", url: "mailto:ahmadabhossen@gmail.com" },
         { platform: "linkedin", url: "https://www.linkedin.com/in/ahmad-abdalllah/" },
@@ -27,14 +31,20 @@ export const placeholderProfile: Profile = {
 };
 
 export const placeholderSkillCategories: SkillCategory[] = [
-    { _id: "1", title: "Core Languages", items: ["JavaScript", "HTML5", "CSS3"] },
-    { _id: "2", title: "Frameworks & Libraries", items: ["React", "Next.js", "Redux Toolkit", "Redux Persist", "Zustand", "Context API"] },
-    { _id: "3", title: "Styling", items: ["Tailwind CSS", "Tailwind CSS 4", "Bootstrap"] },
-    { _id: "4", title: "GraphQL & API", items: ["GraphQL", "REST API", "Axios"] },
-    { _id: "5", title: "Routing & i18n", items: ["React Router DOM", "i18next", "React-Intl", "PostCSS RTL"] },
-    { _id: "7", title: "Animation & UI", items: ["Framer Motion"] },
-    { _id: "9", title: "Tooling", items: ["Vite", "Git", "GitHub", "Figma"] },
-    { _id: "10", title: "Soft Skills", items: ["Responsive Design", "Problem-Solving", "Agile Methodologies", "Collaboration"] },
+    { _id: "1", title: "Core Languages", titleAr: "أساسيات اللغات", items: ["JavaScript", "HTML5", "CSS3"] },
+    { _id: "2", title: "Frameworks & Libraries", titleAr: "أطر العمل والمكتبات", items: ["React", "Next.js", "Redux Toolkit", "Redux Persist", "Zustand", "Context API"] },
+    { _id: "3", title: "Styling", titleAr: "التنسيق والتصميم", items: ["Tailwind CSS", "Tailwind CSS 4", "Bootstrap"] },
+    { _id: "4", title: "GraphQL & API", titleAr: "GraphQL وواجهات API", items: ["GraphQL", "REST API", "Axios"] },
+    { _id: "5", title: "Routing & i18n", titleAr: "التوجيه وتعدّد اللغات", items: ["React Router DOM", "i18next", "React-Intl", "PostCSS RTL"] },
+    { _id: "7", title: "Animation & UI", titleAr: "الحركة والواجهات", items: ["Framer Motion"] },
+    { _id: "9", title: "Tooling", titleAr: "الأدوات", items: ["Vite", "Git", "GitHub", "Figma"] },
+    {
+        _id: "10",
+        title: "Soft Skills",
+        titleAr: "المهارات الشخصية",
+        items: ["Responsive Design", "Problem-Solving", "Agile Methodologies", "Collaboration"],
+        itemsAr: ["التصميم المتجاوب", "حل المشكلات", "منهجيات Agile", "العمل الجماعي"],
+    },
 ];
 
 export const placeholderExperience: Experience[] = [
@@ -42,17 +52,25 @@ export const placeholderExperience: Experience[] = [
         _id: "exp-3",
         company: "BATU ICPC Community",
         employmentType: "Season 2027",
+        employmentTypeAr: "موسم 2027",
         startDate: "2026-11",
         isCurrent: true,
         roles: [
             {
                 title: "Software Development & Cybersecurity Committee Member",
+                titleAr: "عضو لجنة تطوير البرمجيات والأمن السيبراني",
                 startDate: "2026-11",
                 bullets: [
                     "Joined the Software Development & Cybersecurity Committee to contribute to the community's technical initiatives and digital infrastructure",
                     "Collaborate with fellow developers to explore, develop, and maintain web-based solutions for the community",
                     "Participate in technical discussions, problem-solving, and collaborative development activities",
                     "Contribute to building a secure, reliable, and user-friendly digital environment while strengthening software engineering practices",
+                ],
+                bulletsAr: [
+                    "التحقت بلجنة تطوير البرمجيات والأمن السيبراني للمساهمة في المبادرات التقنية والبنية الرقمية للمجتمع",
+                    "أتعاون مع المطورين لاستكشاف وتطوير وصيانة حلول ويب خاصة بالمجتمع",
+                    "أشارك في المناقشات التقنية وحل المشكلات وأنشطة التطوير التعاوني",
+                    "أساهم في بناء بيئة رقمية آمنة وموثوقة وسهلة الاستخدام مع تعزيز ممارسات هندسة البرمجيات",
                 ],
             },
         ],
@@ -61,11 +79,13 @@ export const placeholderExperience: Experience[] = [
         _id: "exp-4",
         company: "GRV Team",
         employmentType: "Volunteer",
+        employmentTypeAr: "تطوّع",
         startDate: "2026-10",
         isCurrent: true,
         roles: [
             {
                 title: "Front-End Developer",
+                titleAr: "مطوّر واجهات أمامية",
                 startDate: "2026-10",
                 bullets: [
                     "Collaborated with a multidisciplinary team to contribute to web development initiatives and digital projects",
@@ -74,6 +94,13 @@ export const placeholderExperience: Experience[] = [
                     "Participated in technical discussions, project planning, and collaborative problem-solving to improve the team's digital products",
                     "Worked alongside team members to transform ideas into practical solutions while maintaining clean, consistent, and maintainable interfaces",
                 ],
+                bulletsAr: [
+                    "تعاونت مع فريق متعدد التخصصات للمساهمة في مبادرات تطوير الويب والمشاريع الرقمية",
+                    "ساهمت في التخطيط وتشكيل منصة GRV Team مع التركيز على واجهة المستخدم ونظام التصميم وتجربة المستخدم",
+                    "عملت على تحديد مكونات واجهة متسقة ولوحة ألوان وخطوط وإرشادات تصميم متجاوب",
+                    "شاركت في المناقشات التقنية وتخطيط المشاريع وحل المشكلات التعاوني لتحسين المنتجات الرقمية للفريق",
+                    "عملت مع أعضاء الفريق لتحويل الأفكار إلى حلول عملية مع الحفاظ على واجهات نظيفة ومتسقة وقابلة للصيانة",
+                ],
             },
         ],
     },
@@ -81,17 +108,25 @@ export const placeholderExperience: Experience[] = [
         _id: "exp-1",
         company: "GDG Damanhour",
         employmentType: "Volunteer",
+        employmentTypeAr: "تطوّع",
         startDate: "2026-02",
         isCurrent: true,
         roles: [
             {
                 title: "Front End Developer",
+                titleAr: "مطوّر واجهات أمامية",
                 startDate: "2026-02",
                 bullets: [
                     "Collaborated with a cross-functional team of Frontend, Backend, and Mobile developers to build a professional community website",
                     "Contributed to the development and implementation of key features to enhance user experience and platform functionality",
                     "Participated in team planning, technical discussions, and problem-solving throughout the development lifecycle",
                     "Worked in a collaborative development environment to deliver a high-quality, scalable web solution",
+                ],
+                bulletsAr: [
+                    "تعاونت مع فريق متكامل من مطوري الواجهات والخوادم والتطبيقات لبناء موقع احترافي للمجتمع",
+                    "ساهمت في تطوير وتنفيذ ميزات رئيسية لتحسين تجربة المستخدم ووظائف المنصة",
+                    "شاركت في تخطيط الفريق والمناقشات التقنية وحل المشكلات خلال دورة التطوير",
+                    "عملت في بيئة تطوير تعاونية لتقديم حل ويب عالي الجودة وقابل للتوسع",
                 ],
             },
         ],
@@ -100,11 +135,13 @@ export const placeholderExperience: Experience[] = [
         _id: "exp-2",
         company: "Here Code Initiative",
         employmentType: "Training",
+        employmentTypeAr: "تدريب",
         startDate: "2025-09",
         endDate: "2026-11",
         roles: [
             {
                 title: "Front-End Developer",
+                titleAr: "مطوّر واجهات أمامية",
                 startDate: "2025-09",
                 endDate: "2026-11",
                 bullets: [
@@ -113,6 +150,13 @@ export const placeholderExperience: Experience[] = [
                     "Collaborated with a team of 4 developers to deliver project features on time",
                     "Optimized performance, reducing load time by approximately 25%",
                     "Practiced effective communication and version control within the team",
+                ],
+                bulletsAr: [
+                    "نفّذت واجهات حديثة وحركات وعناصر تفاعلية",
+                    "صممت تخطيطات تبدأ من الجوال وتدعم أكثر من 3 أحجام شاشات",
+                    "تعاونت مع فريق من 4 مطورين لتسليم ميزات المشروع في الوقت المحدد",
+                    "حسّنت الأداء وخفضت زمن التحميل بنحو 25%",
+                    "مارست التواصل الفعّال واستخدام أنظمة التحكم في الإصدارات داخل الفريق",
                 ],
             },
         ],
@@ -123,8 +167,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-9",
         title: "AI Code & Resume Reviewer",
+        titleAr: "مراجع الأكواد والسير الذاتية بالذكاء الاصطناعي",
         slug: "ai-code-resume-reviewer",
         summary: "An AI-powered tool that analyzes resumes and GitHub repositories, providing structured evaluations, ATS compatibility scores, code quality assessments, and actionable recommendations to help developers improve their professional profiles.",
+        summaryAr: "أداة مدعومة بالذكاء الاصطناعي تحلّل السير الذاتية ومستودعات GitHub، وتقدّم تقييمات منظّمة ودرجات توافق مع أنظمة ATS وتقييمًا لجودة الكود وتوصيات عملية تساعد المطورين على تحسين ملفاتهم المهنية.",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI Integration"],
         githubUrl: "https://github.com/ahmadabdallahh/flyrank-capstone-project",
         cover: "/screen-shots/ai-resume-reviewer.png",
@@ -134,8 +180,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-10",
         title: "Food Order App",
+        titleAr: "تطبيق طلب الطعام",
         slug: "food-order-app",
         summary: "Full-stack meal ordering app — browse a menu of 20 meals, manage a cart with quantity controls, and check out through validated forms, backed by an Express API.",
+        summaryAr: "تطبيق متكامل لطلب الطعام — تصفّح قائمة من 20 وجبة، وأدر سلة الشراء بكميات قابلة للتعديل، وأكمل الطلب عبر نماذج تحقّق من البيانات، مدعوم بواجهة Express.",
         tags: ["React", "TypeScript", "Tailwind CSS", "Express"],
         githubUrl: "https://github.com/ahmadabdallahh/food-order-app",
         featured: true,
@@ -143,8 +191,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-11",
         title: "EventHub Auth",
+        titleAr: "EventHub للمصادقة",
         slug: "eventhub-authorization",
         summary: "Full-stack event manager with JWT cookie authentication — guest browsing, per-field validated signup and login, and a dashboard with event stats.",
+        summaryAr: "مدير فعاليات متكامل مع مصادقة JWT عبر الكوكيز — تصفّح كزائر، وتسجيل وحساب دخول بتحقّق لكل حقل، ولوحة تحكم بإحصاءات الفعاليات.",
         tags: ["React", "Express", "JWT Auth", "Tailwind CSS"],
         cover: "/screen-shots/Event-Hub.png",
         githubUrl: "https://github.com/ahmadabdallahh/Event-Hub-Authorization",
@@ -154,8 +204,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-12",
         title: "Memory Card Game",
+        titleAr: "لعبة بطاقات الذاكرة",
         slug: "memory-game",
         summary: "A sleek, animated memory card game — 16 cards shuffled with Fisher–Yates, live match detection, score and move counters, and a dark glassmorphism UI.",
+        summaryAr: "لعبة ذاكرة أنيقة بحركات سلسة — 16 بطاقة تُخلط بخوارزمية Fisher–Yates، واكتشاف فوري للتطابقات، وعدّاد للنقاط والحركات، وواجهة داكنة بأسلوب الزجاج.",
         tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
         githubUrl: "https://github.com/ahmadabdallahh/memory-game",
         liveUrl: "https://memorry-games.vercel.app",
@@ -164,8 +216,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-1",
         title: "Tansiq Simulator",
+        titleAr: "محاكي التنسيق",
         slug: "tansiq-simulator",
         summary: "Full-stack Egyptian Tansiq placement simulator — students fill 75-slot choice grids with instant autosave; admins manage cutoff datasets via a dashboard panel.",
+        summaryAr: "محاكي متكامل لتنسيق القبول المصري — يملأ الطلاب شبكة اختيارات من 75 خانة مع حفظ فوري، ويدير المسؤولون بيانات الحدود الدنيا من لوحة تحكم.",
         tags: ["Next.js", "NextAuth", "Prisma", "PostgreSQL"],
         cover: "/screen-shots/tansqie-simulator.png",
         liveUrl: "https://tansiq-simulator.vercel.app/",
@@ -174,8 +228,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-2",
         title: "Health Tech",
+        titleAr: "Health Tech",
         slug: "health-tech",
         summary: "A modern health-tech web application — designed to deliver a clean, accessible interface for health-related services and information.",
+        summaryAr: "تطبيق ويب حديث في مجال التقنية الصحية — يقدّم واجهة نظيفة وسهلة الوصول لخدمات ومعلومات الرعاية الصحية.",
         tags: ["React", "JavaScript", "CSS"],
         cover: "/screen-shots/health-tecj.png",
         githubUrl: "https://github.com/ahmadabdallahh/my-health-tech-production",
@@ -185,8 +241,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-3",
         title: "E-Commerce",
+        titleAr: "متجر إلكتروني",
         slug: "e-commerce",
         summary: "A full-featured tech e-commerce storefront — product browsing, cart management, and a streamlined checkout experience with a modern UI.",
+        summaryAr: "متجر إلكتروني متكامل للمنتجات التقنية — تصفّح المنتجات وإدارة السلة وتجربة دفع مبسّطة بواجهة حديثة.",
         tags: ["React", "Redux", "JavaScript", "CSS"],
         cover: "/screen-shots/shop.png",
         liveUrl: "https://tech-commerce-app.vercel.app/",
@@ -196,8 +254,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-5",
         title: "Quiz App",
+        titleAr: "تطبيق الاختبارات",
         slug: "quiz-app",
         summary: "A fun and interactive quiz app — multiple-choice questions with four options, immediate correct/incorrect highlighting, score tracking, and a restart option.",
+        summaryAr: "تطبيق اختبارات ممتع وتفاعلي — أسئلة اختيار من متعدد بأربعة خيارات، وإبراز فوري للإجابة الصحيحة والخاطئة، وتتبّع للنقاط، وإمكانية إعادة البدء.",
         tags: ["React", "TypeScript", "Tailwind CSS"],
         cover: "/screen-shots/Quiz-app.png",
         liveUrl: "https://quiiz-appp.vercel.app/",
@@ -207,8 +267,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-6",
         title: "Tic Tac Toe",
+        titleAr: "إكس أو",
         slug: "tic-tac-toe",
         summary: "A classic Tic Tac Toe game with a clean interface — two-player mode, win/draw detection, and a reset option for endless rounds.",
+        summaryAr: "لعبة إكس أو الكلاسيكية بواجهة نظيفة — وضع لاعِبين اثنين، واكتشاف الفوز والتعادل، وإمكانية إعادة البدء لجولات متتالية.",
         tags: ["HTML", "CSS", "JavaScript"],
         cover: "/screen-shots/Tic-Tac-Toe.png",
         githubUrl: "https://github.com/ahmadabdallahh/tic-tac-toe-game",
@@ -218,8 +280,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-7",
         title: "Simple Weather App",
+        titleAr: "تطبيق الطقس",
         slug: "simple-weather-app",
         summary: "A simple, modern weather app — search any city to get real-time temperature, humidity, wind speed, and dynamic weather icons that match current conditions.",
+        summaryAr: "تطبيق طقس بسيط وحديث — ابحث عن أي مدينة لتحصل على درجة الحرارة والرطوبة وسرعة الرياح وأيقونات طقس ديناميكية تطابق الحالة الحالية.",
         tags: ["HTML", "CSS", "JavaScript", "API"],
         cover: "/screen-shots/weather.png",
         githubUrl: "https://github.com/ahmadabdallahh/simple-weather-app",
@@ -229,8 +293,10 @@ export const placeholderProjects: Project[] = [
     {
         _id: "proj-8",
         title: "Simple Image Gallery",
+        titleAr: "معرض الصور",
         slug: "simple-image-gallery",
         summary: "A clean, responsive image gallery — browse through a curated collection of images with smooth layout and easy navigation.",
+        summaryAr: "معرض صور نظيف ومتجاوب — تصفّح مجموعة مختارة من الصور بتخطيط سلس وتنقّل سهل.",
         tags: ["HTML", "CSS", "JavaScript"],
         cover: "/screen-shots/image-gallery.png",
         githubUrl: "https://github.com/ahmadabdallahh/simple-image-gallery",
@@ -242,14 +308,20 @@ export const placeholderProjects: Project[] = [
 export const placeholderEducation: Education[] = [
     {
         institution: "Borg El-Arab Technological University (BATU)",
+        institutionAr: "جامعة برج العرب التكنولوجية (BATU)",
         degree: "Bachelor's Degree in Information Technology (IT)",
+        degreeAr: "بكالوريوس تكنولوجيا المعلومات (IT)",
         startYear: "Sep 2026",
+        startYearAr: "سبتمبر 2026",
         endYear: "Sep 2030 (Expected)",
+        endYearAr: "سبتمبر 2030 (متوقع)",
         coursework: [],
     },
     {
         institution: "WE School for Applied Technology – El Beheira",
+        institutionAr: "مدرسة WE للتكنولوجيا التطبيقية – البحيرة",
         degree: "Diploma in Applied Technology",
+        degreeAr: "دبلوم التكنولوجيا التطبيقية",
         startYear: "2023",
         endYear: "2026",
         coursework: [],
@@ -260,16 +332,20 @@ export const placeholderArticles: Article[] = [
     {
         _id: "art-1",
         title: "RTL/LTR Handling in React — The Complete Guide",
+        titleAr: "التعامل مع RTL/LTR في React — الدليل الكامل",
         slug: "rtl-ltr-handling-react",
         excerpt: "A practical guide to building fully bidirectional (AR/EN) React apps with proper RTL/LTR support using CSS logical properties and i18next.",
+        excerptAr: "دليل عملي لبناء تطبيقات React ثنائية الاتجاه (عربي/إنجليزي) بدعم صحيح لـ RTL وLTR باستخدام الخصائص المنطقية في CSS وi18next.",
         tags: ["React", "i18n", "RTL", "CSS"],
         publishedAt: new Date().toISOString(),
     },
     {
         _id: "art-2",
         title: "Core Web Vitals Optimization: LCP & CLS in Real Projects",
+        titleAr: "تحسين Core Web Vitals: قياسا LCP وCLS في مشاريع حقيقية",
         slug: "core-web-vitals-optimization",
         excerpt: "Real-world techniques I used to improve LCP and CLS scores in a Magento PWA and Next.js app — not just theory.",
+        excerptAr: "تقنيات عملية استخدمتها لتحسين درجات LCP وCLS في تطبيق Magento PWA ومشروع Next.js — ليست مجرد نظريات.",
         tags: ["Performance", "Core Web Vitals", "Next.js", "PWA"],
         publishedAt: new Date().toISOString(),
     },

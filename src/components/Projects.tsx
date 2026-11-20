@@ -6,11 +6,15 @@ import { ExternalLink, LayoutGrid } from "lucide-react";
 import { Github } from "./Github";
 import SectionHeading from "./SectionHeading";
 import type { Project } from "@/lib/types";
+import { useI18n, useLocalized } from "@/lib/i18n";
 
 export default function Projects({ projects }: { projects: Project[] }) {
+  const { t } = useI18n();
+  const pick = useLocalized();
+
   return (
     <section id="projects" className="section-container py-16 md:py-24">
-      <SectionHeading icon={LayoutGrid} title="Projects" />
+      <SectionHeading icon={LayoutGrid} title={t("sectionProjects")} />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((p, i) => (
@@ -26,31 +30,31 @@ export default function Projects({ projects }: { projects: Project[] }) {
                 {p.cover ? (
                   <Image
                     src={p.cover}
-                    alt={p.title}
+                    alt={pick(p.title, p.titleAr)}
                     fill
                     className="object-cover"
                     unoptimized
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg">
-                    {p.title}
+                  <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg text-center px-4">
+                    {pick(p.title, p.titleAr)}
                   </div>
                 )}
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-bold text-lg text-ink">{p.title}</h3>
+                <h3 className="font-bold text-lg text-ink">{pick(p.title, p.titleAr)}</h3>
                 <p className="mt-1.5 text-sm text-ink-soft leading-relaxed flex-1">
-                  {p.summary}
+                  {pick(p.summary, p.summaryAr)}
                 </p>
 
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  {p.tags?.map((t) => (
+                  {p.tags?.map((tag) => (
                     <span
-                      key={t}
+                      key={tag}
                       className="text-[11px] font-semibold text-ink-soft border border-surface-border rounded-md px-2 py-0.5"
                     >
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
@@ -64,7 +68,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       className="inline-flex items-center gap-1.5 text-sm text-ink-faint hover:text-accent transition-colors"
                     >
                       <Github size={16} />
-                      Code
+                      {t("code")}
                     </a>
                   )}
                   {p.liveUrl && (
@@ -72,9 +76,9 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       href={p.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent ml-auto hover:text-accent-dark transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-accent ms-auto hover:text-accent-dark transition-colors"
                     >
-                      View details
+                      {t("viewDetails")}
                       <ExternalLink size={14} />
                     </a>
                   )}

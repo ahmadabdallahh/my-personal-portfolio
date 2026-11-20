@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Mail, MapPin, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileText, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Github } from "./Github";
 import { Linkedin } from "./Linkedin";
 import type { Profile } from "@/lib/types";
+import { useI18n, useLocalized } from "@/lib/i18n";
 
 const ICONS: Record<string, React.ElementType> = {
     email: Mail,
@@ -16,6 +17,9 @@ const ICONS: Record<string, React.ElementType> = {
 
 export default function Hero({ profile }: { profile: Profile }) {
     const cv = profile.socials.find((s) => s.platform === "cv");
+    const { t, lang, dir } = useI18n();
+    const pick = useLocalized();
+    const Arrow = dir === "rtl" ? ArrowLeft : ArrowRight;
 
     return (
         <section id="about" className="section-container pt-20 pb-16 md:pt-28 md:pb-24">
@@ -26,9 +30,9 @@ export default function Hero({ profile }: { profile: Profile }) {
                 className="max-w-2xl"
             >
                 {profile.status && (
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-600 text-xs font-medium px-3 py-1 mb-5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                        {profile.status}
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 text-success-dark text-xs font-medium px-3 py-1 mb-5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-success" />
+                        {lang === "ar" ? profile.statusAr ?? profile.status : profile.status}
                     </span>
                 )}
 
@@ -37,25 +41,27 @@ export default function Hero({ profile }: { profile: Profile }) {
                 </h1>
 
                 <p className="mt-2 text-2xl md:text-3xl font-medium text-ink-soft">
-                    {profile.title}
+                    {pick(profile.title, profile.titleAr)}
                 </p>
 
                 {profile.location && (
                     <p className="mt-2 flex items-center gap-1.5 text-sm text-ink-faint">
                         <MapPin size={14} />
-                        {profile.location}
+                        {pick(profile.location, profile.locationAr)}
                     </p>
                 )}
 
-                <p className="mt-6 text-lg text-ink-soft leading-relaxed">{profile.bio}</p>
+                <p className="mt-6 text-lg text-ink-soft leading-relaxed">
+                    {pick(profile.bio, profile.bioAr)}
+                </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                     <a
                         href="#projects"
                         className="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-6 py-3 transition-colors"
                     >
-                        View Projects
-                        <ArrowRight size={16} />
+                        {t("viewProjects")}
+                        <Arrow size={16} />
                     </a>
                     {cv && (
                         <a
@@ -64,7 +70,7 @@ export default function Hero({ profile }: { profile: Profile }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 rounded-full border border-surface-border hover:border-ink text-ink text-sm font-semibold px-6 py-3 transition-colors"
                         >
-                            Preview CV
+                            {t("previewCv")}
                             <FileText size={16} />
                         </a>
                     )}

@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cairo } from "next/font/google";
 import "./globals.css";
 import { getProfile } from "@/lib/data";
+import { I18nProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+});
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  variable: "--font-arabic",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -56,10 +64,19 @@ export function generateMetadata(): Metadata {
   };
 }
 
+const themeScript = `(function(){try{var s=localStorage.getItem('theme');var d=s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);var l=localStorage.getItem('lang');if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+    <html lang="en" dir="ltr" className={`${inter.variable} ${cairo.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <ThemeProvider>
+          <I18nProvider>{children}</I18nProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
