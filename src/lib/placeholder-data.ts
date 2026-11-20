@@ -152,16 +152,6 @@ export const placeholderProjects: Project[] = [
         featured: true,
     },
     {
-        _id: "proj-4",
-        title: "Her-Code",
-        slug: "her-code",
-        summary: "A community-driven initiative website for Her-Code — built to showcase the program, share resources, and support women in tech.",
-        tags: ["React", "JavaScript", "Tailwind CSS"],
-        cover: "/screen-shots/Her-Code.png",
-        liveUrl: "https://here-code.vercel.app/",
-        featured: true,
-    },
-    {
         _id: "proj-5",
         title: "Quiz App",
         slug: "quiz-app",
