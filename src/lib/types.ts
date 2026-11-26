@@ -10,6 +10,7 @@ export type Profile = {
   statusAr?: string;
   bio: string;
   bioAr?: string;
+  metaDescription: string;
   avatar?: string;
   cvUrl?: string;
   socials: Social[];

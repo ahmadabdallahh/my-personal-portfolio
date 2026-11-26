@@ -17,13 +17,13 @@ const cairo = Cairo({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ahmad-abdallah.vercel.app";
 
 export function generateMetadata(): Metadata {
   const profile = getProfile();
 
   const title = `${profile.name} — ${profile.title}`;
-  const description = profile.bio.slice(0, 155);
+  const description = profile.metaDescription;
 
   return {
     metadataBase: new URL(siteUrl),
