@@ -20,7 +20,7 @@ export const placeholderProfile: Profile = {
     status: "Open to Work",
     statusAr: "متاح للعمل",
     bio: "Motivated Front-End Developer with strong fundamentals in HTML, CSS, JavaScript, React.js, and hands-on experience building real-world projects. Passionate about creating responsive, user-friendly, and accessible web interfaces.",
-    bioAr: "مطوّر واجهات أمامية طموح يمتلك أساسًا قويًا في HTML وCSS وJavaScript وReact.js، مع خبرة عملية في بناء مشاريع حقيقية. شغوف ببناء واجهات ويب متجاوبة وسهلة الاستخدام ومهيّأة لإمكانية الوصول.",
+    bioAr: "مطوّر واجهات أمامية طموح يمتلك أساسًا قويًا في HTML وCSS وJavaScript و React.js، مع خبرة عملية في بناء مشاريع حقيقية. شغوف ببناء واجهات ويب متجاوبة وسهلة الاستخدام ومهيّأة لإمكانية الوصول.",
     metaDescription: "Ahmad Abdallah is a front-end developer in Cairo building responsive, accessible web interfaces with React and Next.js.",
     socials: [
         { platform: "email", url: "mailto:ahmadabhossen@gmail.com" },
