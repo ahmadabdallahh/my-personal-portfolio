@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, LayoutGrid } from "lucide-react";
+import { ArrowUpRight, ExternalLink, LayoutGrid } from "lucide-react";
 import { Github } from "./Github";
 import SectionHeading from "./SectionHeading";
 import type { Project } from "@/lib/types";
 import { useI18n, useLocalized } from "@/lib/i18n";
 
 export default function Projects({ projects }: { projects: Project[] }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const pick = useLocalized();
 
   return (
@@ -32,8 +33,8 @@ export default function Projects({ projects }: { projects: Project[] }) {
                     src={p.cover}
                     alt={pick(p.title, p.titleAr)}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
-                    unoptimized
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-ink-faint font-bold text-lg text-center px-4">
@@ -44,8 +45,12 @@ export default function Projects({ projects }: { projects: Project[] }) {
 
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="font-bold text-lg text-ink">{pick(p.title, p.titleAr)}</h3>
-                <p className="mt-1.5 text-sm text-ink-soft leading-relaxed flex-1">
+                <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">
                   {pick(p.summary, p.summaryAr)}
+                </p>
+                <p className="mt-2 text-xs text-ink-faint leading-relaxed">
+                  <span className="font-semibold">{t("problem")}:</span>{" "}
+                  {pick(p.problem, p.problemAr)}
                 </p>
 
                 <div className="mt-3 flex flex-wrap gap-1.5">
@@ -59,7 +64,14 @@ export default function Projects({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
 
-                <div className="mt-4 flex items-center gap-4 pt-3 border-t border-surface-border">
+                <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 pt-3 border-t border-surface-border">
+                  <Link
+                    href={`/${lang}/projects/${p.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-accent transition-colors"
+                  >
+                    {t("viewCaseStudy")}
+                    <ArrowUpRight size={14} />
+                  </Link>
                   {p.githubUrl && (
                     <a
                       href={p.githubUrl}
@@ -78,7 +90,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-accent ms-auto hover:text-accent-dark transition-colors"
                     >
-                      {t("viewDetails")}
+                      {t("liveDemo")}
                       <ExternalLink size={14} />
                     </a>
                   )}

@@ -1,77 +1,20 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import {
+    getDirection,
+    translate,
+    type Direction,
+    type Lang,
+    type TranslationKey,
+} from "./i18n-dictionaries";
 
-export type Lang = "en" | "ar";
-
-const dict = {
-    en: {
-        navAbout: "About",
-        navSkills: "Skills",
-        navExperience: "Experience",
-        navProjects: "Projects",
-        navEducation: "Education",
-        navContact: "Contact",
-        viewProjects: "View Projects",
-        previewCv: "Preview CV",
-        sectionSkills: "Skills",
-        sectionExperience: "Experience",
-        sectionProjects: "Projects",
-        sectionEducation: "Education",
-        sectionContact: "Get in Touch",
-        viewDetails: "View details",
-        hideDetails: "Hide details",
-        code: "Code",
-        present: "Present",
-        copy: "Copy",
-        copied: "Copied",
-        contactLead:
-            "Reach out for details on any project, or to stay updated on what I\u2019m building next.",
-        rights: "All rights reserved.",
-        toggleTheme: "Toggle theme",
-        switchLanguage: "Switch language",
-        languageName: "العربية",
-        openMenu: "Open menu",
-        closeMenu: "Close menu",
-        brand: "Portfolio",
-    },
-    ar: {
-        navAbout: "نبذة",
-        navSkills: "المهارات",
-        navExperience: "الخبرات",
-        navProjects: "المشاريع",
-        navEducation: "التعليم",
-        navContact: "التواصل",
-        viewProjects: "استعرض المشاريع",
-        previewCv: "معاينة السيرة الذاتية",
-        sectionSkills: "المهارات",
-        sectionExperience: "الخبرات",
-        sectionProjects: "المشاريع",
-        sectionEducation: "التعليم",
-        sectionContact: "تواصل معي",
-        viewDetails: "عرض التفاصيل",
-        hideDetails: "إخفاء التفاصيل",
-        code: "الكود",
-        present: "حتى الآن",
-        copy: "نسخ",
-        copied: "تم النسخ",
-        contactLead:
-            "تواصل معي لمعرفة تفاصيل أي مشروع، أو لمتابعة ما أعمل عليه حاليًا.",
-        rights: "جميع الحقوق محفوظة.",
-        toggleTheme: "تبديل المظهر",
-        switchLanguage: "تغيير اللغة",
-        languageName: "English",
-        openMenu: "فتح القائمة",
-        closeMenu: "إغلاق القائمة",
-        brand: "الملف الشخصي",
-    },
-} as const;
-
-export type TranslationKey = keyof (typeof dict)["en"];
+export type { Lang, TranslationKey } from "./i18n-dictionaries";
 
 type I18nValue = {
     lang: Lang;
-    dir: "ltr" | "rtl";
+    dir: Direction;
     setLang: (lang: Lang) => void;
     toggleLang: () => void;
     t: (key: TranslationKey) => string;
@@ -79,35 +22,35 @@ type I18nValue = {
 
 const I18nContext = createContext<I18nValue | null>(null);
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-    const [lang, setLangState] = useState<Lang>("en");
-    const [mounted, setMounted] = useState(false);
+export function I18nProvider({
+    children,
+    lang,
+}: {
+    children: React.ReactNode;
+    lang: Lang;
+}) {
+    const router = useRouter();
+    const pathname = usePathname();
 
-    useEffect(() => {
-        const stored = window.localStorage.getItem("lang");
-        if (stored === "ar" || stored === "en") setLangState(stored);
-        setMounted(true);
-    }, []);
-
-    const dir: "ltr" | "rtl" = lang === "ar" ? "rtl" : "ltr";
-
-    useEffect(() => {
-        if (!mounted) return;
-        const root = document.documentElement;
-        root.lang = lang;
-        root.dir = dir;
-        window.localStorage.setItem("lang", lang);
-    }, [lang, dir, mounted]);
+    const setLang = useCallback(
+        (next: Lang) => {
+            if (next === lang) return;
+            const segments = pathname.split("/");
+            segments[1] = next;
+            router.push(segments.join("/") || `/${next}`);
+        },
+        [lang, pathname, router],
+    );
 
     const value = useMemo<I18nValue>(
         () => ({
             lang,
-            dir,
-            setLang: setLangState,
-            toggleLang: () => setLangState((v) => (v === "en" ? "ar" : "en")),
-            t: (key) => dict[lang][key],
+            dir: getDirection(lang),
+            setLang,
+            toggleLang: () => setLang(lang === "en" ? "ar" : "en"),
+            t: (key) => translate(lang, key),
         }),
-        [lang, dir],
+        [lang, setLang],
     );
 
     return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

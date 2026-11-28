@@ -32,6 +32,14 @@ export function getProjects(): Project[] {
     return placeholderProjects;
 }
 
+export function getProjectSlugs(): string[] {
+    return placeholderProjects.map((project) => project.slug);
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+    return placeholderProjects.find((project) => project.slug === slug);
+}
+
 export function getEducation(): Education[] {
     return placeholderEducation;
 }

@@ -60,6 +60,14 @@ export type Project = {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
+  problem: string;
+  problemAr?: string;
+  solution: string;
+  solutionAr?: string;
+  technicalDecision: string;
+  technicalDecisionAr?: string;
+  outcome?: string;
+  outcomeAr?: string;
 };
 
 export type GraduationProject = {
