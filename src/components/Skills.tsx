@@ -25,14 +25,9 @@ export default function Skills({ categories }: { categories: SkillCategory[] }) 
             transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
             className="rounded-2xl border border-surface-border p-5 bg-[linear-gradient(180deg,var(--c-card-gradient-from)_0%,var(--c-card-gradient-to)_100%)]"
           >
-            <div className="flex items-center justify-between mb-3 gap-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-ink">
-                {pick(cat.title, cat.titleAr)}
-              </h3>
-              <span className="text-xs font-medium text-white bg-accent rounded-full w-5 h-5 flex items-center justify-center shrink-0">
-                {cat.items.length}
-              </span>
-            </div>
+            <h3 className="mb-3 text-xs font-semibold tracking-wide text-ink">
+              <BidiText text={pick(cat.title, cat.titleAr)} />
+            </h3>
             <ul className="space-y-1.5">
               {cat.items.map((item, idx) => (
                 <li key={`${cat._id}-${item}`} className="flex items-center gap-2 text-sm text-ink-soft">
