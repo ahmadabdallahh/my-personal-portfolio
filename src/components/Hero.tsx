@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, FileText, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Github } from "./Github";
 import { Linkedin } from "./Linkedin";
+import BidiText from "./BidiText";
 import type { Profile } from "@/lib/types";
 import { useI18n, useLocalized } from "@/lib/i18n";
 
@@ -41,18 +42,18 @@ export default function Hero({ profile }: { profile: Profile }) {
                 </h1>
 
                 <p className="mt-2 text-2xl md:text-3xl font-medium text-ink-soft">
-                    {pick(profile.title, profile.titleAr)}
+                    <BidiText text={pick(profile.title, profile.titleAr)} />
                 </p>
 
                 {profile.location && (
                     <p className="mt-2 flex items-center gap-1.5 text-sm text-ink-faint">
                         <MapPin size={14} />
-                        {pick(profile.location, profile.locationAr)}
+                        <BidiText text={pick(profile.location, profile.locationAr)} />
                     </p>
                 )}
 
                 <p className="mt-6 text-lg text-ink-soft leading-relaxed">
-                    {pick(profile.bio, profile.bioAr)}
+                    <BidiText text={pick(profile.bio, profile.bioAr)} />
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">

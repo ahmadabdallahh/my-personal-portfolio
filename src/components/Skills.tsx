@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import BidiText from "./BidiText";
 import type { SkillCategory } from "@/lib/types";
 import { useI18n, useLocalized } from "@/lib/i18n";
 
@@ -36,7 +37,7 @@ export default function Skills({ categories }: { categories: SkillCategory[] }) 
               {cat.items.map((item, idx) => (
                 <li key={`${cat._id}-${item}`} className="flex items-center gap-2 text-sm text-ink-soft">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                  {pick(item, cat.itemsAr?.[idx])}
+                  <BidiText text={pick(item, cat.itemsAr?.[idx])} />
                 </li>
               ))}
             </ul>
